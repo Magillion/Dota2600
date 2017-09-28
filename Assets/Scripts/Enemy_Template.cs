@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
     public int playerteam;
+    public int currenthealth = 5;
     public int enemyhealth = 5;
     public int enemydamage = 2;
     public float attackspeed = 1;
     public float enemyrange = 1.5f;
 
-	// Use this for initialization
-	void Start ()
-    { 
-        GetComponent<CircleCollider2D>().radius = enemyrange;
+    // Use this for initialization
+    void Start()
+    {
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         //Movement code should go here
     }
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour {
     // of the health of this entity.
     public void TakeDamage(int damage)
     {
-        enemyhealth = enemyhealth - damage;
+        currenthealth = currenthealth - damage;
     }
 
     // To be called when applying damage to other entities.
